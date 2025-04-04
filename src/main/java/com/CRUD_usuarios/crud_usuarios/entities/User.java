@@ -6,23 +6,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
- 
+
 @Entity
 @Table(name="users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
- 
+
     @Column(nullable = false, length = 60)
     private String nome;
- 
+
     @Column(length = 100)
     private String email;
- 
-    @Column(nullable = false, length = 100)
-    private String logradouro;
 
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -46,14 +45,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
- 
-    
 }
